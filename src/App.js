@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Profile } from './Profile';
+import { Directory } from './Directory';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+  
+const [ currentUsername, setCurrentUsername ] = useState(null)
+
+
+ const handleChoose = (newUsername) => {
+    setCurrentUsername(newUsername);
+  }
+
+ const handleReturnToDirectoryClick= () => {
+  setCurrentUsername(null);
+  }
+ 
+    let body;
+    if (currentUsername) {
+      body = (
+        <Profile
+          username={currentUsername}
+          onChoose={handleChoose}
+        />
+      );
+    } else {
+      body = <Directory onChoose={handleChoose} />;
+    }
+
+    return (
+      <div className="App">
+        <header>
+          <h1>PetBook</h1>
+
+          <nav>
+            {currentUsername && (
+              <button onClick={handleReturnToDirectoryClick}>
+                Return to directory
+              </button>
+            )}
+          </nav>
+        </header>
+
+        <main>{body}</main>
+      </div>
+    );
+  }
+
 
 export default App;
