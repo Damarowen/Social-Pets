@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Profile } from './Profile';
+import Profile  from './Profile';
 import { Directory } from './Directory';
 
 const App = () => {
@@ -30,8 +30,9 @@ const [ currentUsername, setCurrentUsername ] = useState(null)
     return (
       <div className="App">
         <header>
-          <h1>PetBook</h1>
+        { console.log('current Username ',currentUsername) }
 
+          <h1>PetBook</h1>
           <nav>
             {currentUsername && (
               <button onClick={handleReturnToDirectoryClick}>

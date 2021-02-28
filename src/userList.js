@@ -1,21 +1,17 @@
 import React from 'react';
 
-export class Userlist extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
+const UserList = (props) => {
+
+  const handleClick = (event) => {
+    props.onChoose(event.target.dataset.username);
+    console.log(event.target)
   }
 
-  handleClick(event) {
-    this.props.onChoose(event.target.dataset.username);
-  }
-
-  render() {
     return (
       <ul>
-        {this.props.usernames.map((username) => (
+        {props.usernames.map((username) => (
           <li key={username}>
-            <button data-username={username} onClick={this.handleClick}>
+            <button data-username={username} onClick={handleClick}>
               @{username}
             </button>
           </li>
@@ -23,4 +19,5 @@ export class Userlist extends React.Component {
       </ul>
     );
   }
-}
+
+  export default UserList
