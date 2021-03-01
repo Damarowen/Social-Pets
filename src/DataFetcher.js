@@ -1,5 +1,5 @@
 
-const FAKE_USER_DATA = {
+const DATA = {
     cat: {
       name: 'Kitty Cat',
       bio: "I'm the coolest cat around. I'm the cat's meow!",
@@ -23,41 +23,18 @@ const FAKE_USER_DATA = {
     },
   };
   
-  const timeoutByFetchId = new Map();
-  
-  class Fetch {
-    constructor() {
-      Object.defineProperty(this, '_id', {
-        value: Date.now() + Math.random().toString().substr(2),
-      });
-    }
-  }
-  
-  export function fetchUserData(username, callback) {
-    if (!FAKE_USER_DATA.hasOwnProperty(username)) {
-      throw new Error(
-        'Invalid username. Make sure it is "cat", "dog", or "komodo".'
-      );
-    }
-  
-    const fetch = new Fetch();
-  
+
+   const fetchUserData = (username, callback) => {
+
+    //* delay for loading 1 detik
     const delay = Math.floor(Math.random() * 1000) + 500;
+
     const timeout = setTimeout(() => {
-      timeoutByFetchId.delete(fetch._id);
-      callback(FAKE_USER_DATA[username]);
+      callback(DATA[username]);
     }, delay);
   
-    timeoutByFetchId.set(fetch._id, timeout);
-  
-    return fetch;
+ 
+    return timeout
   }
   
-  export function cancelFetch(fetch) {
-    if (!fetch || typeof fetch !== 'object') {
-      return;
-    }
-    const timeout = timeoutByFetchId.get(fetch._id);
-    clearTimeout(timeout);
-    timeoutByFetchId.delete(fetch._id);
-  }
+export default fetchUserData;

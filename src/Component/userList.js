@@ -3,7 +3,7 @@ import React from 'react';
 const UserList = (props) => {
 
   const handleClick = (event) => {
-    props.onChoose(event.target.dataset.username);
+    props.passFromProfileAndDirectory(event.target.dataset.username);
     console.log(event.target)
   }
 

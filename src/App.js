@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
-import Profile  from './Profile';
-import { Directory } from './Directory';
+import Profile  from './Component/Profile';
+import  Directory  from './Component/Directory';
 
 const App = () => {
   
 const [ currentUsername, setCurrentUsername ] = useState(null)
 
-
+/*
+ * pilih username 
+ */
  const handleChoose = (newUsername) => {
     setCurrentUsername(newUsername);
   }
 
+  /*
+ * back to directory
+ */
  const handleReturnToDirectoryClick= () => {
   setCurrentUsername(null);
   }
@@ -20,11 +25,11 @@ const [ currentUsername, setCurrentUsername ] = useState(null)
       body = (
         <Profile
           username={currentUsername}
-          onChoose={handleChoose}
+          pilih={handleChoose}
         />
       );
     } else {
-      body = <Directory onChoose={handleChoose} />;
+      body = <Directory pilih={handleChoose} />;
     }
 
     return (
@@ -36,7 +41,7 @@ const [ currentUsername, setCurrentUsername ] = useState(null)
           <nav>
             {currentUsername && (
               <button onClick={handleReturnToDirectoryClick}>
-                Return to directory
+                Return to directory ( set username to null)
               </button>
             )}
           </nav>

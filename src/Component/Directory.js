@@ -1,7 +1,7 @@
 import React from 'react';
-import UserList from './userList.js';
+import UserList from './userList';
 
-export function Directory(props) {
+const Directory = (props) => {
   return (
     <div className="Directory">
       <h2>User directory</h2>
@@ -11,9 +11,13 @@ export function Directory(props) {
       }
       <UserList
         usernames={['dog', 'cat', 'komodo']}
-        onChoose={props.onChoose}
+        passFromProfileAndDirectory={props.pilih}
       />
 
     </div>
   );
 }
+
+
+
+export default Directory

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { fetchUserData } from './DataFetcher';
-import UserList from './userList.js';
+import  fetchUserData  from '../DataFetcher';
+import UserList from './userList';
 
 const Profile = (props) => {
 
@@ -9,14 +9,16 @@ const Profile = (props) => {
   useEffect(() => {
     const loadUserData = () => {
       setUserData(null);
+      {
+        // *fetchUserData = (username, callback)   
+      }
       fetchUserData(props.username, (userData) => {
         setUserData(userData);
       });
     }
 
     loadUserData()
-console.log(props)
-//*props trigger currentUserName
+    //*props trigger currentUserName
   }, [props])
 
   // componentDidUpdate(prevProps) {
@@ -58,7 +60,7 @@ console.log(props)
         <h3>@{props.username}</h3>
         <p>{bio}</p>
         <h3>My friends</h3>
-        <UserList usernames={friends} onChoose={props.onChoose} />
+        <UserList usernames={friends} passFromProfileAndDirectory={props.pilih} />
       </div>
     </div>
   );
