@@ -9,7 +9,7 @@ const ProfileBody = ({ userData, pilih, username }) => {
     const friends = userData.friends
 
     return (
-        <div className="profile-body">
+        <div className="ProfileBody">
             <div className="profile-picture">
                 <img src={userData.profilePictureUrl} alt="" />
             </div>

@@ -46,16 +46,12 @@ button {
   display: flex;
 }
 
-.Profile {
+.ProfileBody {
   display: flex;
-  flex-grow: 1;
-  width: 66%;
 }
 
 .Profile .profile-picture {
-
   margin-right: 1rem;
-
 }
 
 .Profile .profile-picture img {
@@ -64,11 +60,10 @@ button {
 
 .loading {
   color: #999;
+  margin: 20px auto;
 }
 
-.loading p {
-  background: #999;
-}
+
 
 .Directory {
   flex-grow: 1;
