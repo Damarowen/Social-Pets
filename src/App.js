@@ -36,7 +36,6 @@ const [ currentUsername, setCurrentUsername ] = useState(null)
       <div className="App">
         <header>
         { console.log('current Username ',currentUsername) }
-
           <h1>PetBook</h1>
           <nav>
             {currentUsername && (
