@@ -53,22 +53,20 @@ button {
 }
 
 .Profile .profile-picture {
-  width: 100px;
-  height: 100px;
+
   margin-right: 1rem;
-  display: flex;
-  background: #999;
+
 }
 
 .Profile .profile-picture img {
   width: inherit;
 }
 
-.Profile.loading {
+.loading {
   color: #999;
 }
 
-.Profile.loading p {
+.loading p {
   background: #999;
 }
 

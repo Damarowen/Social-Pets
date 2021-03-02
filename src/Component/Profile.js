@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import  fetchUserData  from '../DataFetcher';
-import UserList from './userList';
+import UserList from './UserList';
 
 const Profile = ({username, pilih}) => {
 
@@ -21,19 +21,12 @@ const Profile = ({username, pilih}) => {
     //*props trigger currentUserName
   }, [username])
 
-  // componentDidUpdate(prevProps) {
-  //   if (this.props.username !== prevProps.username) {
-  //     cancelFetch(this.fetchID)
-  //     this.loadUserData();
-  //   }
-  // }
-
-
-  const isLoading = userData === null ? true : false;
+  const isLoading = userData == null ? true : false;
   let name;
   let bio
   let friends
 
+  //* class default Profile
   let className = 'Profile';
   if (isLoading) {
     name = 'loading..'
@@ -50,6 +43,7 @@ const Profile = ({username, pilih}) => {
     <div className={className}>
       <div className="profile-picture">
         {
+          //*IF NOT LOADING
           !isLoading && (
             <img src={userData.profilePictureUrl} alt="" />
           )
