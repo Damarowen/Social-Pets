@@ -1,7 +1,7 @@
 import React from 'react';
 import UserList from './userList';
 
-const Directory = (props) => {
+const Directory = ({pilih}) => {
   return (
     <div className="Directory">
       <h2>User directory</h2>
@@ -11,7 +11,7 @@ const Directory = (props) => {
       }
       <UserList
         usernames={['dog', 'cat', 'komodo']}
-        passFromProfileAndDirectory={props.pilih}
+        passFromProfileAndDirectory={pilih}
       />
 
     </div>

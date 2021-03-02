@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import  fetchUserData  from '../DataFetcher';
 import UserList from './userList';
 
-const Profile = (props) => {
+const Profile = ({username, pilih}) => {
 
   const [userData, setUserData] = useState(null)
 
@@ -12,14 +12,14 @@ const Profile = (props) => {
       {
         // *fetchUserData = (username, callback)   
       }
-      fetchUserData(props.username, (userData) => {
+      fetchUserData(username, (userData) => {
         setUserData(userData);
       });
     }
 
     loadUserData()
     //*props trigger currentUserName
-  }, [props])
+  }, [username])
 
   // componentDidUpdate(prevProps) {
   //   if (this.props.username !== prevProps.username) {
@@ -57,10 +57,10 @@ const Profile = (props) => {
       </div>
       <div className="profile-body">
         <h2>{name}</h2>
-        <h3>@{props.username}</h3>
+        <h3>@{username}</h3>
         <p>{bio}</p>
         <h3>My friends</h3>
-        <UserList usernames={friends} passFromProfileAndDirectory={props.pilih} />
+        <UserList usernames={friends} passFromProfileAndDirectory={pilih} />
       </div>
     </div>
   );

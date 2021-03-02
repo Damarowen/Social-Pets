@@ -1,15 +1,15 @@
 import React from 'react';
 
-const UserList = (props) => {
+const UserList = ({usernames, passFromProfileAndDirectory}) => {
 
   const handleClick = (event) => {
-    props.passFromProfileAndDirectory(event.target.dataset.username);
+    passFromProfileAndDirectory(event.target.dataset.username);
     console.log(event.target)
   }
 
     return (
       <ul>
-        {props.usernames.map((username) => (
+        {usernames.map((username) => (
           <li key={username}>
             <button data-username={username} onClick={handleClick}>
               @{username}
