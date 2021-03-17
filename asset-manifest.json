@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/social-pets/static/css/main.2d41784a.chunk.css",
+    "main.js": "/social-pets/static/js/main.8e1fee0a.chunk.js",
+    "main.js.map": "/social-pets/static/js/main.8e1fee0a.chunk.js.map",
+    "runtime-main.js": "/social-pets/static/js/runtime-main.f4ca10ea.js",
+    "runtime-main.js.map": "/social-pets/static/js/runtime-main.f4ca10ea.js.map",
+    "static/js/2.5e0479f9.chunk.js": "/social-pets/static/js/2.5e0479f9.chunk.js",
+    "static/js/2.5e0479f9.chunk.js.map": "/social-pets/static/js/2.5e0479f9.chunk.js.map",
+    "static/js/3.643aaf5f.chunk.js": "/social-pets/static/js/3.643aaf5f.chunk.js",
+    "static/js/3.643aaf5f.chunk.js.map": "/social-pets/static/js/3.643aaf5f.chunk.js.map",
+    "index.html": "/social-pets/index.html",
+    "static/css/main.2d41784a.chunk.css.map": "/social-pets/static/css/main.2d41784a.chunk.css.map",
+    "static/js/2.5e0479f9.chunk.js.LICENSE.txt": "/social-pets/static/js/2.5e0479f9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f4ca10ea.js",
+    "static/js/2.5e0479f9.chunk.js",
+    "static/css/main.2d41784a.chunk.css",
+    "static/js/main.8e1fee0a.chunk.js"
+  ]
+}
