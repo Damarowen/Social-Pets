@@ -1,5 +1,10 @@
-# Getting Started with Create React App
+## Social Pets 
 
+![pic](https://res.cloudinary.com/damarowen/image/upload/v1615994286/SOCIAL-PETS_hijmfx.png)
+[demo](https://damarowen.github.io/Social-Pets/)
+
+
+# Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
